@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap");
-
-@value primaryColor: #B1B2FF;
-@value secondaryColor:#AAC4FF;
-@value tertiaryColor:#EEF1FF;
+@value primaryColor: #b1b2ff;
+@value secondaryColor:#aac4ff;
+@value tertiaryColor:#eef1ff;
 
 .header {
   width: 100%;

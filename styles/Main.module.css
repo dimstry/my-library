@@ -1,0 +1,12 @@
+.main {
+  background-color: #aac4ff;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+  grid-gap: 20px;
+  box-sizing: border-box;
+}
