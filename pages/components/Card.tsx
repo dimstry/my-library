@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import style from "../../styles/Card.module.css";
 export default function Card(datas: any) {
-  console.log(datas);
   return (
     <>
       {

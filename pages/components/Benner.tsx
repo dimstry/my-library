@@ -13,7 +13,7 @@ export default function Benner() {
   const getDatas = async (val: any) => {
     await axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${val}&key=${process.env.API_Key}&maxResults=40`
+        `https://www.googleapis.com/books/v1/volumes?q=${val}&key=${process.env.API_KEY}&maxResults=40`
       )
       .then((res: any) => {
         return setDatas(res.data.items);
