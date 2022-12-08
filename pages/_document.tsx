@@ -5,7 +5,7 @@ export default function Document() {
     <Html>
       <Head />
       <body>
-        <title>Perpus</title>
+        <title>Books</title>
         <link
           rel="stylesheet"
           type="text/css"

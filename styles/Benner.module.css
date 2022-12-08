@@ -48,6 +48,7 @@
 }
 .header_right img {
   margin-top: 30px;
+  -webkit-box-reflect: below 0 linear-gradient(transparent, #0005);
 }
 
 .search {
@@ -62,7 +63,8 @@
   height: 35px;
   padding: 0 0.5rem;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 700;
+  color: primaryColor;
   border-radius: 10px 0 0 10px;
   box-shadow: 2px 2px 5px tertiaryColor;
 }
@@ -76,4 +78,18 @@
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.main {
+  background-color: #aac4ff;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+  grid-gap: 30px;
+  box-sizing: border-box;
+  justify-content: center;
 }
