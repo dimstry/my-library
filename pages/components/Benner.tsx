@@ -9,6 +9,8 @@ import Card from "./Card";
 export default function Benner() {
   const [search, setSearch] = useState("");
   const [datas, setDatas] = useState([]);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const getDatas = async (val: any) => {
     await axios
@@ -19,21 +21,19 @@ export default function Benner() {
         return setDatas(res.data.items);
       })
       .catch((err) => {
-        console.log(err);
+        return setError(err);
       });
   };
 
   const searchBox = (e: any) => {
-    if (e.key === "Enter") {
-      getDatas(search);
-    } else if (e.type === "click") {
+    if (e.key === "Enter" || e.type === "click") {
       getDatas(search);
     }
   };
 
   useEffect(() => {
     getDatas("React js");
-  }, []);
+  }, [datas]);
 
   return (
     <>

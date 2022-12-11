@@ -1,6 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
+import React, { useEffect, useState } from "react";
 import style from "../../styles/Card.module.css";
+import Modal from "./Modal";
 export default function Card(datas: any) {
+  const [show, setShow] = useState(false);
+  const [bookItem, setBookItem] = useState();
+
+  useEffect(() => {}, [show, bookItem]);
   return (
     <>
       {
@@ -16,19 +22,31 @@ export default function Card(datas: any) {
               data.saleInfo.listPrice && data.saleInfo.listPrice.amount;
             if (img && title && price) {
               return (
-                <div className={style.card} key={i}>
-                  <img src={img} alt={""} />
-                  <div className={style.bottom}>
-                    <h3 className={style.title}>{title}</h3>
-
-                    <p className={style.amour}>
-                      {price.toLocaleString("id-ID", {
-                        style: "currency",
-                        currency: "IDR",
-                      })}
-                    </p>
+                <>
+                  <div
+                    className={style.card}
+                    onClick={() => {
+                      setShow(true), setBookItem(data);
+                    }}
+                    key={i}
+                  >
+                    <img src={img} alt={""} />
+                    <div className={style.bottom}>
+                      <h3 className={style.title}>{title}</h3>
+                      <p className={style.amour}>
+                        {price.toLocaleString("id-ID", {
+                          style: "currency",
+                          currency: "IDR",
+                        })}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                  <Modal
+                    show={show}
+                    bookItem={bookItem}
+                    onclose={() => setShow(false)}
+                  />
+                </>
               );
             }
           })

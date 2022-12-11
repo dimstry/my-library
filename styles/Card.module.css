@@ -8,6 +8,11 @@
   transition: 0.5s;
   text-align: center;
   position: relative;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(0.9);
+  box-shadow: 0 10px 10px #eef1ff;
 }
 
 .card img {
